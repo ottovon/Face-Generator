@@ -38,8 +38,8 @@ document.getElementById('btn-gen').addEventListener('click', function() {
     var lqTo2 = rand(200, 250);
     // var lqTo3 = rand(300, 450);
     // var lqTo4 = rand(400, 500);
-    var rqTo1 = rand(lqTo1 + 500, lqTo1 + 450);
-    var rqTo2 = rand(lqTo2 - 50, lqTo2 + 50);
+    var rqTo1 = lqTo1;
+    var rqTo2 = lqTo2;
     // var rqTo3 = rand(300, 450);
     // var rqTo4 = rand(400, 500);
 
@@ -53,8 +53,11 @@ document.getElementById('btn-gen').addEventListener('click', function() {
     // Right half
     ctx.quadraticCurveTo(650, 600, 650, 400);
     ctx.quadraticCurveTo(rqTo1, rqTo2, 450, 200);
-    console.log(rqTo1);
-    console.log(rqTo2);
+    
+    console.log("Top Left Quat X " + lqTo1);
+    console.log("Top Left Quat Y " + lqTo2);
+    console.log("Top Right Quat X " + rqTo1);
+    console.log("Top Right Quat Y " + rqTo2);
 
     ctx.lineWidth = 3;
     ctx.strokeStyle = '#000000';
