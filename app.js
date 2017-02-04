@@ -6,9 +6,12 @@ var ctx = canvas.getContext('2d');
 ctx.beginPath();
 ctx.moveTo(450, 200);
 
-ctx.lineTo(450, 200);
-
-ctx.quadraticCurveTo(300, 400, 200, 300);
+// Left half
+ctx.quadraticCurveTo(200, 200, 200, 400);
+ctx.quadraticCurveTo(200, 600, 450, 600);
+// Right half
+ctx.quadraticCurveTo(650, 600, 650, 400);
+ctx.quadraticCurveTo(650, 200, 450, 200);
 
 ctx.lineWidth = 3;
 ctx.strokeStyle = '#000000';
@@ -17,8 +20,6 @@ ctx.stroke();
 // Nose
 ctx.beginPath();
 ctx.moveTo(450, 400);
-
-ctx.lineTo(450, 400);
 
 ctx.quadraticCurveTo(300, 500, 450, 500);
 
@@ -33,6 +34,33 @@ function rand(min, max) {
 document.getElementById('btn-gen').addEventListener('click', function() {
     ctx.clearRect(0, 0, 900, 900);   
 
+    var lqTo1 = rand(150, 250);
+    var lqTo2 = rand(200, 250);
+    // var lqTo3 = rand(300, 450);
+    // var lqTo4 = rand(400, 500);
+    var rqTo1 = rand(lqTo1 + 500, lqTo1 + 450);
+    var rqTo2 = rand(lqTo2 - 50, lqTo2 + 50);
+    // var rqTo3 = rand(300, 450);
+    // var rqTo4 = rand(400, 500);
+
+    // Head
+    ctx.beginPath();
+    ctx.moveTo(450, 200);
+
+    // Left half
+    ctx.quadraticCurveTo(lqTo1, lqTo2, 200, 400);
+    ctx.quadraticCurveTo(200, 600, 450, 600);
+    // Right half
+    ctx.quadraticCurveTo(650, 600, 650, 400);
+    ctx.quadraticCurveTo(rqTo1, rqTo2, 450, 200);
+    console.log(rqTo1);
+    console.log(rqTo2);
+
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = '#000000';
+    ctx.stroke();
+
+    // Nose
     ctx.beginPath();
     // ctx.moveTo(rand(400, 500), rand(400, 500));
     // ctx.lineTo(rand(400, 500), rand(400, 500));
@@ -40,12 +68,7 @@ document.getElementById('btn-gen').addEventListener('click', function() {
 
     ctx.lineTo(450, 400);
 
-    var qTo1 = rand(300, 450);
-    var qTo2 = rand(400, 500);
-
-    ctx.quadraticCurveTo(qTo1, qTo2, rand(450, 500), rand(400, 550));
-    console.log(qTo1);
-    console.log(qTo2);
+    ctx.quadraticCurveTo(rand(300, 450), rand(400, 500), rand(450, 500), rand(400, 550));
     ctx.quadraticCurveTo(rand(450, 500), rand(400, 500), rand(500, 510), rand(500, 400));
 
     ctx.lineWidth = 3;
