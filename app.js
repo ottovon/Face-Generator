@@ -21,11 +21,11 @@ ctx.stroke();
 ctx.beginPath();
 
 // Left eyebrow
-ctx.moveTo(300, 300);
-ctx.quadraticCurveTo(350, 275, 400, 300);
+ctx.moveTo(325, 300);
+ctx.quadraticCurveTo(350, 290, 375, 300);
 // Right eyebrow
-ctx.moveTo(500, 300);
-ctx.quadraticCurveTo(550, 275, 600, 300);
+ctx.moveTo(525, 300);
+ctx.quadraticCurveTo(550, 290, 575, 300);
 
 ctx.lineWidth = 20;
 ctx.lineCap = 'round';
@@ -39,7 +39,7 @@ ctx.arc(550, 375, 25, 0, 2 * Math.PI, false);
 ctx.fillStyle = '#3e3e3e';
 ctx.fill();
 
-// Ears
+// // Ears
 ctx.beginPath();
 
 // Left ear
